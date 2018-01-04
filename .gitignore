@@ -12,10 +12,8 @@
 /db/*.sqlite3-journal
 
 # Ignore all logfiles and tempfiles.
-/log/*
-/tmp/*
-!/log/.keep
-!/tmp/.keep
+/log
+/tmp
 
 /node_modules
 /yarn-error.log
@@ -23,17 +21,17 @@
 .byebug_history
 
 
-/assets/config
-/assets/images
+/app/assets/config
+/app/assets/images
 
 # Only track application.js in /assets/javascripts directory
-/assets/javascripts/*
-!/assets/javascripts/application.js
+/app/assets/javascripts/*
+!/app/assets/javascripts/application.js
 
-/assets/channels
-/assets/jobs
-/assets/mailers
-/assets/models/concerns
+/app/assets/channels
+/app/assets/jobs
+/app/assets/mailers
+/app/assets/models/concerns
 
 # Ignore all files in db directory except schema.rb
 /db/*
@@ -49,7 +47,6 @@
 /lib
 /public
 /test
-/tmp
 /vendor
 config.ru
 Gemfile.lock
