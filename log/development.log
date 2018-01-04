@@ -10217,3 +10217,143 @@ Processing by Blog::PostsController#index as HTML
 Completed 200 OK in 41ms (Views: 37.4ms | ActiveRecord: 1.8ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-01-04 14:07:31 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Blog::PostsController#index as HTML
+  Rendering blog/posts/index.html.erb within layouts/author
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."published" = $1 ORDER BY "posts"."published_at" DESC LIMIT $2 OFFSET $3[0m  [["published", "t"], ["LIMIT", 3], ["OFFSET", 0]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND "taggings"."context" = $3[0m  [["taggable_id", 2], ["taggable_type", "Post"], ["context", "tags"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND "taggings"."context" = $3[0m  [["taggable_id", 1], ["taggable_type", "Post"], ["context", "tags"]]
+  Rendered collection of blog/posts/_post.html.erb [2 times] (21.0ms)
+  Rendered blog/posts/index.html.erb within layouts/author (30.2ms)
+  Rendered layouts/_navbar.html.erb (2.9ms)
+Completed 200 OK in 203ms (Views: 180.3ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/authors/sign_in" for 127.0.0.1 at 2018-01-04 14:07:37 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/johnny/.rvm/gems/ruby-2.4.1/gems/devise-4.4.0/app/views/devise/sessions/new.html.erb within layouts/author
+  Rendered /home/johnny/.rvm/gems/ruby-2.4.1/gems/devise-4.4.0/app/views/devise/shared/_links.html.erb (0.7ms)
+  Rendered /home/johnny/.rvm/gems/ruby-2.4.1/gems/devise-4.4.0/app/views/devise/sessions/new.html.erb within layouts/author (11.1ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+Completed 200 OK in 60ms (Views: 34.8ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/authors/sign_in" for 127.0.0.1 at 2018-01-04 14:07:43 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T1z1Y4IRWNXgGjJLhRvqQu7jbbgt5jhSyVtwja5oW5TiqFXkz5n5qYGS6FVJaI464RU6vA5ux/vICdyeY2KnGA==", "author"=>{"email"=>"pat@pat.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAuthor Load (0.6ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."email" = $1 ORDER BY "authors"."id" ASC LIMIT $2[0m  [["email", "pat@pat.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "authors" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "authors"."id" = $5[0m  [["current_sign_in_at", "2018-01-04 19:07:43.297848"], ["last_sign_in_at", "2018-01-04 17:50:51.617508"], ["sign_in_count", 4], ["updated_at", "2018-01-04 19:07:43.298751"], ["id", 1]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 121ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-04 14:07:43 -0500
+Processing by Blog::PostsController#index as HTML
+  Rendering blog/posts/index.html.erb within layouts/author
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."published" = $1 ORDER BY "posts"."published_at" DESC LIMIT $2 OFFSET $3[0m  [["published", "t"], ["LIMIT", 3], ["OFFSET", 0]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND "taggings"."context" = $3[0m  [["taggable_id", 2], ["taggable_type", "Post"], ["context", "tags"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND "taggings"."context" = $3[0m  [["taggable_id", 1], ["taggable_type", "Post"], ["context", "tags"]]
+  Rendered collection of blog/posts/_post.html.erb [2 times] (4.7ms)
+  Rendered blog/posts/index.html.erb within layouts/author (6.5ms)
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 ORDER BY "authors"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (2.0ms)
+Completed 200 OK in 37ms (Views: 35.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts?tag=cool" for 127.0.0.1 at 2018-01-04 14:07:45 -0500
+Processing by Blog::PostsController#index as HTML
+  Parameters: {"tag"=>"cool"}
+  Rendering blog/posts/index.html.erb within layouts/author
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" INNER JOIN "taggings" "post_taggings_85d8d76" ON "post_taggings_85d8d76"."taggable_id" = "posts"."id" AND "post_taggings_85d8d76"."taggable_type" = 'Post' AND "post_taggings_85d8d76"."tag_id" IN (SELECT "tags"."id" FROM "tags" WHERE "tags"."name" ILIKE 'cool' ESCAPE '!') WHERE "posts"."published" = $1 ORDER BY "posts"."published_at" DESC LIMIT $2 OFFSET $3[0m  [["published", "t"], ["LIMIT", 3], ["OFFSET", 0]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND "taggings"."context" = $3[0m  [["taggable_id", 2], ["taggable_type", "Post"], ["context", "tags"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND "taggings"."context" = $3[0m  [["taggable_id", 1], ["taggable_type", "Post"], ["context", "tags"]]
+  Rendered collection of blog/posts/_post.html.erb [2 times] (11.9ms)
+  Rendered blog/posts/index.html.erb within layouts/author (18.6ms)
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 ORDER BY "authors"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (1.9ms)
+Completed 200 OK in 57ms (Views: 47.2ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/posts?tag=batman" for 127.0.0.1 at 2018-01-04 14:07:47 -0500
+Processing by Blog::PostsController#index as HTML
+  Parameters: {"tag"=>"batman"}
+  Rendering blog/posts/index.html.erb within layouts/author
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" INNER JOIN "taggings" "post_taggings_5c6d9ed" ON "post_taggings_5c6d9ed"."taggable_id" = "posts"."id" AND "post_taggings_5c6d9ed"."taggable_type" = 'Post' AND "post_taggings_5c6d9ed"."tag_id" IN (SELECT "tags"."id" FROM "tags" WHERE "tags"."name" ILIKE 'batman' ESCAPE '!') WHERE "posts"."published" = $1 ORDER BY "posts"."published_at" DESC LIMIT $2 OFFSET $3[0m  [["published", "t"], ["LIMIT", 3], ["OFFSET", 0]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND "taggings"."context" = $3[0m  [["taggable_id", 2], ["taggable_type", "Post"], ["context", "tags"]]
+  Rendered collection of blog/posts/_post.html.erb [1 times] (4.5ms)
+  Rendered blog/posts/index.html.erb within layouts/author (8.4ms)
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 ORDER BY "authors"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (2.2ms)
+Completed 200 OK in 41ms (Views: 36.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/posts/test" for 127.0.0.1 at 2018-01-04 14:07:49 -0500
+Processing by Blog::PostsController#show as HTML
+  Parameters: {"id"=>"test"}
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."published" = $1 AND "posts"."slug" = $2 ORDER BY "posts"."id" ASC LIMIT $3[0m  [["published", "t"], ["slug", "test"], ["LIMIT", 1]]
+  Rendering blog/posts/show.html.erb within layouts/author
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered blog/posts/show.html.erb within layouts/author (15.5ms)
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 ORDER BY "authors"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (2.1ms)
+Completed 200 OK in 62ms (Views: 52.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/authors/posts" for 127.0.0.1 at 2018-01-04 14:07:52 -0500
+Processing by Authors::PostsController#index as HTML
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 ORDER BY "authors"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering authors/posts/index.html.erb within layouts/author
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."published_at" DESC[0m  [["author_id", 1]]
+  Rendered collection of authors/posts/_post.html.erb [2 times] (1.1ms)
+  Rendered authors/posts/index.html.erb within layouts/author (2.7ms)
+  Rendered layouts/_navbar.html.erb (1.2ms)
+Completed 200 OK in 32ms (Views: 28.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/authors/account" for 127.0.0.1 at 2018-01-04 14:07:54 -0500
+Processing by Authors::AccountsController#edit as HTML
+  [1m[36mAuthor Load (0.9ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 ORDER BY "authors"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering authors/accounts/edit.html.erb within layouts/author
+  Rendered authors/accounts/edit.html.erb within layouts/author (4.8ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+Completed 200 OK in 47ms (Views: 40.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-04 14:07:58 -0500
+Processing by Blog::PostsController#index as HTML
+  Rendering blog/posts/index.html.erb within layouts/author
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."published" = $1 ORDER BY "posts"."published_at" DESC LIMIT $2 OFFSET $3[0m  [["published", "t"], ["LIMIT", 3], ["OFFSET", 0]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND "taggings"."context" = $3[0m  [["taggable_id", 2], ["taggable_type", "Post"], ["context", "tags"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND "taggings"."context" = $3[0m  [["taggable_id", 1], ["taggable_type", "Post"], ["context", "tags"]]
+  Rendered collection of blog/posts/_post.html.erb [2 times] (6.1ms)
+  Rendered blog/posts/index.html.erb within layouts/author (8.2ms)
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 ORDER BY "authors"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (2.1ms)
+Completed 200 OK in 36ms (Views: 33.4ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/authors/sign_out" for 127.0.0.1 at 2018-01-04 14:08:00 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"mvyyMYA9tz10o7Bg8ZWL1cJUHpD6KU2EICOo1LvvLmaDqh9odPceB2gPOV2/1NEeXBfgSrvffDc4t8aAQbQ/pg=="}
+  [1m[36mAuthor Load (0.8ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 ORDER BY "authors"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 14ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-04 14:08:00 -0500
+Processing by Blog::PostsController#index as HTML
+  Rendering blog/posts/index.html.erb within layouts/author
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."published" = $1 ORDER BY "posts"."published_at" DESC LIMIT $2 OFFSET $3[0m  [["published", "t"], ["LIMIT", 3], ["OFFSET", 0]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND "taggings"."context" = $3[0m  [["taggable_id", 2], ["taggable_type", "Post"], ["context", "tags"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND "taggings"."context" = $3[0m  [["taggable_id", 1], ["taggable_type", "Post"], ["context", "tags"]]
+  Rendered collection of blog/posts/_post.html.erb [2 times] (8.2ms)
+  Rendered blog/posts/index.html.erb within layouts/author (12.0ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+Completed 200 OK in 47ms (Views: 42.1ms | ActiveRecord: 1.8ms)
+
+
