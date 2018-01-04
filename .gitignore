@@ -11,43 +11,45 @@
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
-# Ignore all logfiles and tempfiles.
-/log
-/tmp
 
-/node_modules
-/yarn-error.log
-
-.byebug_history
-
-
-/app/assets/config
-/app/assets/images
-
-# Only track application.js in /assets/javascripts directory
-/app/assets/javascripts/*
-!/app/assets/javascripts/application.js
-
-/app/assets/channels
-/app/assets/jobs
-/app/assets/mailers
-/app/assets/models/concerns
-
-# Ignore all files in db directory except schema.rb
-/db/*
-!/db/schema.rb
-
-# In config directory only track database.yml and routes.rb
-/config/*
-!/config/database.yml
-!/config/routes.rb
-
-
-/bin
-/lib
-/public
-/test
-/vendor
-config.ru
-Gemfile.lock
-Rakefile
+#################################################################
+## Ignore all logfiles and tempfiles.
+#/log
+#/tmp
+#
+#/node_modules
+#/yarn-error.log
+#
+#.byebug_history
+#
+#
+#/app/assets/config
+#/app/assets/images
+#
+## Only track application.js in /assets/javascripts directory
+#/app/assets/javascripts/*
+#!/app/assets/javascripts/application.js
+#
+#/app/assets/channels
+#/app/assets/jobs
+#/app/assets/mailers
+#/app/assets/models/concerns
+#
+## Ignore all files in db directory except schema.rb
+#/db/*
+#!/db/schema.rb
+#
+## In config directory only track database.yml and routes.rb
+#/config/*
+#!/config/database.yml
+#!/config/routes.rb
+#
+#
+#/bin
+#/lib
+#/public
+#/test
+#/vendor
+#config.ru
+#Gemfile.lock
+#Rakefile
